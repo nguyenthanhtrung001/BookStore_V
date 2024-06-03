@@ -1,0 +1,26 @@
+
+*{margin:0 ; padding: 0; }
+#shop-name {
+  animation: colorChange 15s infinite; /* Sử dụng animation "colorChange" với thời gian 8 giây và lặp vô hạn */
+  display: inline; /* Hiển thị tên cửa hàng trên cùng một dòng */
+}
+
+
+@keyframes colorChange {
+  0% {
+    color: green; /* Màu đỏ cho chữ cái đầu tiên */
+  }
+  25% {
+    color: yellow; /* Màu xanh cho chữ cái thứ hai */
+  }
+  50% {
+    color: orange; /* Màu cam cho chữ cái thứ ba */
+  }
+  75% {
+    color: whitesmoke; /* Màu tím cho chữ cái thứ tư */
+  }
+  100% {
+    color: red; /* Quay lại màu đỏ cho chữ cái cuối cùng */
+  }
+}
+

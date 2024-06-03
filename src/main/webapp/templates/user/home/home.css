@@ -1,0 +1,117 @@
+/* Đặt lại margin và padding cho tất cả các phần tử */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+  	.picture-h-set-200 {
+			    height: 200px ;
+			     max-width: 100%;
+			    
+			}
+	.picture-h-set-220 {
+			    height: 220px ;
+			     max-width: 100%;
+			    
+			}
+			
+	.picture-h-set-240 {
+			    height: 240px ;
+			     max-width: 100%;
+			    
+			}
+	.picture-h-set-100 {
+			    height: 100px;
+			     max-width: 100%;
+			}
+	.picture-h-set-120 {
+			    height: 120px;
+			     max-width: 100%;
+			}
+			
+	.picture-h-set-130 {
+			    height: 130px;
+			     max-width: 100%;
+			}
+	.card-h-set-150 {
+			    height: 150px;
+			    max-width: 100%;
+			}
+			
+	.card-h-set-200 {
+			    height: 200px;
+			    padding-bottom: 10px;
+			    max-width: 100%;
+			}
+	.card-h-set-220 {
+			    height: 220px;
+			    padding-bottom: 10px;
+			    max-width: 100%;
+			}
+	.card-h-set-280 {
+			    height: 280px;
+			    max-width: 100%;
+			}
+			
+	.card-h-set-300 {
+			    height: 300px;
+			    max-width: 100%;
+			}
+	.card-h-set-320 {
+			    height: 320px;
+			    max-width: 100%;
+			}
+			
+	.slide-h-360-w-520 {
+                	 max-width: 100%;
+                	 height: 360px;
+                
+                }
+                
+	
+	
+/* Hiệu ứng chuyển động cho danh mục và sản phẩm */
+.product-image, .product-image-static {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng chuyển động khi hover */
+.product-image:hover, .product-image-static:hover {
+    transform: scale(1.1); /* Phóng to 110% khi hover */
+}
+
+/* Hiệu ứng giảm giá */
+.product-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    display: none;
+}
+
+/* Hiệu ứng hover cho thẻ sản phẩm */
+.product-card {
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hiệu ứng chuyển động khi hover */
+.product-card:hover {
+    transform: scale(1.05); /* Phóng to 105% khi hover */
+}
+
+/* Hiệu ứng chuyển động ảnh chuyển động khi hover */
+.product-card:hover .product-image-static {
+    transform: scale(1.1); /* Phóng to 110% khi hover */
+}
+
+.product-card:hover .product-image-moving {
+    display: block; /* Hiển thị ảnh chuyển động khi hover */
+}
+
+

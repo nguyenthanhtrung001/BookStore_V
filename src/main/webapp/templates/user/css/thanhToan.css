@@ -1,0 +1,203 @@
+body {
+	font-size: 20px;
+}
+
+.form-control {
+	font-size: 17px;
+}
+
+.form-group label {
+	color: white;
+	font-size: 15px;
+}
+
+.khung {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.head_ {
+	font-size: 20px;
+	align-items: center;
+	color: white;
+	position: sticky;
+	margin-bottom: 5px;
+}
+
+.fixed-payment {
+	position: sticky;
+	top: 75px;
+	z-index: 100;
+	/* Điều này có thể cần thiết nếu bạn muốn đảm bảo rằng khung luôn ở trên cùng */
+}
+
+.tongTien span {
+	color: red;
+	font-size: 24px;
+	align-self: right;
+	font-style: oblique;
+}
+
+.product-card {
+	display: flex;
+	align-items: center;
+	border: 0.001px solid #333; /* Đổi màu và độ dày của đường viền */
+	border-radius: 5px;
+	margin-bottom: 15px;
+	padding: 10px;
+	transition: transform 0.3s, background-color 0.3s, color 0.3s;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng shadow */
+	background-color: #E4D7D7;
+}
+
+.product-card:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-card img {
+	max-width: 100px;
+	margin-right: 15px;
+}
+
+.product-info {
+	flex-grow: 1;
+}
+
+/* Định dạng cho hàng 1 (Tên sản phẩm) */
+.product-row.product-name {
+	text-align: center;
+}
+
+/* Định dạng cho hàng 2 (Thông tin sản phẩm, Số lượng sản phẩm) */
+.product-row.product-details {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 5px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+/* Định dạng cho hàng 3 (Thành tiền) */
+.product-row.product-quantity {
+	text-align: right;
+}
+
+/* only animate if the device supports hover */
+@media ( hover : hover) {
+	#creditcard {
+		/*  set start position */
+		transform: translateY(110px);
+		transition: transform 0.1s ease-in-out;
+		/*  set transition for mouse enter & exit */
+	}
+	#money {
+		/*  set start position */
+		transform: translateY(180px);
+		transition: transform 0.1s ease-in-out;
+		/*  set transition for mouse enter & exit */
+	}
+	button:hover #creditcard {
+		transform: translateY(0px);
+		transition: transform 0.2s ease-in-out;
+		/*  overide transition for mouse enter */
+	}
+	button:hover #money {
+		transform: translateY(0px);
+		transition: transform 0.3s ease-in-out;
+		/*  overide transition for mouse enter */
+	}
+}
+
+@
+keyframes bounce { 0% {
+	transform: translateY(0);
+}
+
+50
+
+
+%
+{
+transform
+
+
+:
+
+
+translateY
+(
+
+
+-0
+.25rem
+
+
+)
+;
+
+
+}
+100
+
+
+%
+{
+transform
+
+
+:
+
+
+translateY
+(
+
+
+0
+
+
+)
+;
+
+
+}
+}
+.button:hover .button__text span {
+	transform: translateY(-0.25rem);
+	transition: transform .2s ease-in-out;
+}
+
+/* styling */
+@import
+	url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap")
+	;
+
+.button {
+	width: 100%;
+	border: none;
+	outline: none;
+	background-color: purple;
+	padding: 1rem 90px 1rem 2rem;
+	position: relative;
+	border-radius: 8px;
+	letter-spacing: 0.7px;
+	background-color: #5086bd;
+	color: #fff;
+	font-size: 21px;
+	font-family: "Lato", sans-serif;
+	cursor: pointer;
+	box-shadow: rgba(0, 9, 61, 0.2) 0px 4px 8px 0px;
+	border: none;
+}
+
+.button:active {
+	transform: translateY(1px);
+}
+
+.button__svg {
+	position: absolute;
+	overflow: visible;
+	bottom: 6px;
+	right: 0.2rem;
+	height: 140%;
+}

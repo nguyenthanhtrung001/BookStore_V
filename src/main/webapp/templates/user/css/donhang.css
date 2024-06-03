@@ -1,0 +1,301 @@
+@charset "UTF-8";
+
+.listSP {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: flex-start;
+}
+
+.SP {
+	background-color: #ffffff; /* Màu nền trắng */
+	border: 1px solid #e0e0e0; /* Đổi màu viền và làm mảnh viền hơn */
+	padding: 20px; /* Giảm khoảng cách lề bên trong */
+	width: 300px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	/* Tạo hiệu ứng bóng đổ nhẹ */
+	margin: 10px; /* Tạo khoảng cách giữa các phần tử .SP */
+}
+
+.infoSP {
+	font-size: 16px;
+	margin: 5px 0;
+}
+
+.nameSP {
+	font-size: 18px;
+	margin: 5px 0;
+	font-style: italic;
+}
+
+.priceSP {
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.priceLabel {
+	color: black;
+	font-weight: bold;
+}
+
+.order {
+	font-size: 18px;
+	border: 1px solid #ddd;
+	padding: 20px;
+	margin: 20px 0;
+}
+
+.donhang-summary {
+	font-size: 18px;
+}
+
+.maPD {
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+h3.modaltitle {
+  text-align: center; 
+  font-size: 19px;
+}
+
+.custom-col-6 {
+	width: 50%; /* Chia ra 50% */
+	float: left; /* Hiển thị cùng hàng */
+	text-align: right; /* Căn lề phải */
+}
+
+/* CSS cho phần hiển thị thông tin đơn hàng */
+.order-info {
+	background-color: #f4f4f4; /* Màu nền */
+	border: 1px solid #ddd; /* Đường viền */
+	padding: 10px; /* Khoảng cách trong phần tử */
+	margin: 10px 0; /* Khoảng cách giữa các phần tử */
+}
+
+/* CSS cho phần hiển thị mỗi dòng thông tin */
+.order-info p {
+	margin: 5px 0; /* Khoảng cách giữa các dòng thông tin */
+}
+
+/* CSS cho phần hiển thị ngày đặt hàng */
+.order-info p strong {
+	color: #2c83e0; /* Màu chữ mạnh */
+}
+
+/* CSS cho phần hiển thị ngày đặt hàng */
+.order-info p fmt\:formatDate {
+	color: #000; /* Màu chữ thông tin ngày đặt hàng */
+}
+
+.infoPD p strong {
+	color: #2c83e0; /* Màu chữ mạnh */
+}
+
+/* Màu mặc định cho ngôi sao là xám */
+.star {
+	color: gray;
+	font-size: 24px;
+	cursor: pointer; /* Biến con trỏ thành hình bàn tay khi di chuột vào */
+}
+
+/* Khi người dùng di chuột qua ngôi sao, thay đổi màu thành vàng */
+.star:hover {
+	color: yellow;
+}
+
+.star-rated {
+	color: yellow;
+	font-size: 24px;
+}
+
+.rating {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rating-text {
+	font-weight: bold;
+	font-size: 18px;
+	margin-left: 10px;
+	/* Tạo khoảng cách bên trái giữa rating-text và các ngôi sao */
+}
+
+.rating-text.ratetext-5 {
+	color: green;
+}
+
+.rating-text.ratetext-4 {
+	color: blue;
+}
+
+.rating-text.ratetext-3 {
+	color: orange;
+}
+
+.rating-text.ratetext-2 {
+	color: red;
+}
+
+.rating-text.ratetext-1 {
+	color: purple;
+}
+
+.product {
+	border: 1px solid #ddd; /* Đường viền cho sản phẩm */
+	margin: 10px; /* Khoảng cách giữa các sản phẩm */
+	padding: 10px; /* Khoảng cách bên trong sản phẩm */
+	/* Đảm bảo rằng sản phẩm sẽ hiển thị theo từng hàng trên màn hình */
+	display: inline-block;
+	width: 250px;
+	/* Độ rộng của sản phẩm (tùy chỉnh theo kích thước mong muốn) */
+	/* Căn giữa nội dung */
+	text-align: center;
+}
+
+.product a {
+	display: block;
+	text-align: center;
+}
+
+.product-da-danh-gia {
+	border: 1px solid #ddd; /* Đường viền cho sản phẩm */
+	margin: 10px; /* Khoảng cách giữa các sản phẩm */
+	padding: 10px; /* Khoảng cách bên trong sản phẩm */
+	/* Đảm bảo rằng sản phẩm sẽ hiển thị theo từng hàng trên màn hình */
+	display: inline-block;
+	width: 250px;
+	/* Độ rộng của sản phẩm (tùy chỉnh theo kích thước mong muốn) */
+	/* Căn giữa nội dung */
+	text-align: center;
+}
+
+.product-da-danh-gia a {
+	display: block;
+	text-align: center;
+}
+
+.product-chua-danh-gia {
+	border: 1px solid #ddd; /* Đường viền cho sản phẩm */
+	margin: 10px; /* Khoảng cách giữa các sản phẩm */
+	padding: 10px; /* Khoảng cách bên trong sản phẩm */
+	/* Đảm bảo rằng sản phẩm sẽ hiển thị theo từng hàng trên màn hình */
+	display: inline-block;
+	width: 250px;
+	/* Độ rộng của sản phẩm (tùy chỉnh theo kích thước mong muốn) */
+	/* Căn giữa nội dung */
+	text-align: center;
+}
+
+.product-chua-danh-gia a {
+	display: block;
+	text-align: center;
+}
+
+.timeline {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.timeline-item {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.timeline-marker {
+	width: 40px;
+	height: 40px;
+	background: #007BFF;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 20px;
+}
+
+.timeline-content {
+	margin-left: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.timeline-content p {
+	margin: 0;
+	line-height: 1.4;
+}
+
+.timeline-marker i.fa {
+	vertical-align: middle;
+}
+
+.xem-danh-gia-button,
+.mua-lai-button {
+  position: absolute;
+  bottom: 25px;
+  width: 45%; /* Điều chỉnh kích thước của cả hai nút bằng nhau */
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.mua-lai-button {
+  right: 20px; /* Đặt vị trí của nút mua lại */
+  background-color: red;
+}
+
+/* Thêm kiểu hover khi di chuột vào nút */
+.xem-danh-gia-button:hover {
+	background-color: #0056b3;
+}
+
+/* Thêm kiểu hover khi di chuột vào nút */
+.mua-lai-button:hover {
+	background-color: darkred;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.promotion-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.diagonal-rectangle {
+    width: 60px;
+    height: 30px;
+    background-color: #f00; /* Màu nền của hình chữ nhật */
+    transform: rotate(45deg); /* Quay hình chữ nhật 45 độ  */
+}
+
+.promotion-text {
+    color: #fff; 
+    text-align: center;
+    font-weight: bold;
+    transform: rotate(-45deg); /* Quay chữ "Sale" 45 độ để phù hợp với hình chữ nhật */
+    position: relative;
+    top: 50%; /* Dịch chữ xuống 50% để căn giữa */
+    left: 50%; /* Dịch chữ qua trái 50% để căn giữa */
+    transform: translate(-50%, -50%); /* Dịch chữ để căn giữa hoàn toàn */
+}
+
+.form-container {
+  max-height: 420px; /* Đặt kích thước tối đa của container */
+  overflow-y: auto; /* Bật cuộn dọc khi nội dung vượt quá kích thước */
+  border: 1px solid rgba(204, 204, 204, 0.5); /* Tạo viền cho container nếu cần */
+  padding: 5px; /* Điều chỉnh khoảng cách nội dung với viền nếu cần */
+}
+
+

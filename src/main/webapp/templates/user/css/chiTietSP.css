@@ -1,0 +1,46 @@
+/* Đảm bảo HTML và BODY chiếm toàn bộ chiều cao màn hình */
+.khung {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.khung_anh img {
+	border-radius: 3%;
+	position: sticky;
+	height: 475px;
+}
+
+.khung_inf {
+	padding-bottom: 1%;
+	font-size: 22px;
+	border-radius: 3%;
+	height: 475px;
+	background-color: #f8f8f8;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+	color: white;
+	margin-left: 12%;
+	margin-top: 10px;
+	font-size: 33px;
+}
+
+.lg {
+	font-size: 22px;
+}
+
+/* Phần hiển thị đánh giá sp */
+#rating-container {
+	display: flex;
+	align-items: center;
+}
+
+.fa {
+	font-size: 24px;
+	margin: 0 5px;
+}
+
+#rating-stars {
+	color: orange;
+}
