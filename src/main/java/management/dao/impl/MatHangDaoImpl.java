@@ -18,8 +18,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import management.dao.IMatHangDao;
 import management.entity.Banggia;
+import management.entity.Book;
+import management.entity.DefaultMathang;
 import management.entity.Mathang;
-
+import management.entity.Pen;
+import management.entity.Stationery;
 import management.dao.IMatHangDao;
 
 @Repository
@@ -347,5 +350,8 @@ public class MatHangDaoImpl implements IMatHangDao {
 		List<Mathang> pageData = query.list();
 		return pageData;
 	}
+
+	
+
 
 }

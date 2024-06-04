@@ -19,5 +19,4 @@ public interface IMatHangDao {
 	
 	public List<Mathang> getMathangByPage_Nhan(int pageNumber,String title,String search, String category, String nhan);
 	
-	
 }

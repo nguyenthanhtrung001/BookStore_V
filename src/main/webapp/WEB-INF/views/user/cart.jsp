@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 								<tr>
 									<th scope="col"><input type="checkbox" id="select-all-checkbox"> Chọn tất cả</th>
 									<th scope="col">Sản phẩm</th>
-									<th scope="col">Kích thước</th>
+								
 									<th scope="col">Số Lượng</th>
 									<th scope="col">Giá tiền</th>
 									<th scope="col">Giảm giá(%)</th>
@@ -114,13 +114,15 @@ h1, h2, h3, h4, h5, h6 {
 										<td style="width: 200px;"><span
 												class="product-name">${crt.setTenMHString()}</span>
 										</td>
-										<td class="size">${crt.getSize()}</td>
+									
 										<td style="width: 110px;">
 											<div class="input-group">
 												<input type="number" class="form-control quantity-input" min="1"
-													max="${crt.Max_Quantity()}"
-													data-max-quantity="${crt.Max_Quantity()}" name="quantity"
-													value="${crt.getSoLuong()}" oninput="updateTotal(this)">
+       max="${crt.Max_Quantity()}"
+       data-max-quantity="${crt.Max_Quantity()}" name="quantity"
+       value="${crt.getSoLuong()}" oninput="updateTotal(this)"
+       style="color: black; background-color: gray; font-weight: bold; text-align: center; font-size: 14px;">
+
 
 
 											</div>

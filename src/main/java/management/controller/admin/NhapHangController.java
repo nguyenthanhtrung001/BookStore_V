@@ -29,7 +29,7 @@ import management.bean.ProductWithDiscount;
 import management.controller.ReadPython;
 import management.dao.IMatHangDao;
 import management.dao.INhapHangDao;
-
+import management.entity.Book;
 import management.entity.Chatlieu;
 
 import management.dao.IThanhToanDAO;
@@ -196,9 +196,10 @@ public class NhapHangController {
 			@RequestParam("tenFile") String tenFile, @RequestParam("token") String token)
 			throws UnsupportedEncodingException {
 
-		ProductDTO pro= new ProductDTO();
-		Mathang mh = ProductFactory.createProduct(pro);
+		Book book = new Book(); 
+		Mathang mh= (Mathang)book;
 		mh.setMamh(mamh);
+		
 
 		String url_fb = "https://firebasestorage.googleapis.com/v0/b/webthoitrang-cfe5c.appspot.com/o/images%2Fproducts%2F";
 		url = url_fb + tenFile + "?alt=media&token=" + token;

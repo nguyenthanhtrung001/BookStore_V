@@ -7,17 +7,21 @@ $(document).ready(() => {
 
 	// Lấy phần tử span có id là "giaBan"
 	const giaBanElement = document.getElementById('giaBan');
+	
 
 	//Lấy giá trị của biến gia từ môi trường view
 	const gia = giaBanElement.getAttribute('data-gia');
+	
 	// Tạo đối tượng Intl.NumberFormat và định dạng giá
 	const formatter = new Intl.NumberFormat('vi-VN', {
 		style: 'currency',
 		currency: 'VND',
 	});
-
+	
 	// Định dạng giá và đặt nội dung cho phần tử span
+	
 	giaBanElement.textContent = formatter.format(gia);
+	
 
 
 	$('#muaNgay').click(() => {

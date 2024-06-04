@@ -11,33 +11,168 @@
 			<!-- Thêm tệp JavaScript -->
 			<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-			<link rel="stylesheet" href='<c:url value="/templates/user/css/chiTietSP.css"/>'>
-
+	 	
+ 
 			<script src="<c:url value='/templates/user/js/chiTietSP.js'/>" type="text/javascript"></script>
 
 			<script src="<c:url value='/templates/user/product/product.js'/>"></script>
 			<script src="<c:url value='/templates/user/product/productDiscount.js'/>"></script>
 			<script src="<c:url value='/templates/user/product/productCategory.js'/>"></script>
 			<script src="<c:url value='/templates/user/product/ProductSlide.js'/>"></script>
+		    
+			
+			<style>
+#rating-container {
+	display: flex;
+	align-items: center;
+}
+
+#rating-stars {
+	color: orange;
+}
+/* Đảm bảo HTML và BODY chiếm toàn bộ chiều cao màn hình */
+.khung_anh img {
+	border-radius: 3%;
+	position: sticky;
+	height: 400px;
+}
+
+.khung_inf {
+	padding-bottom: 1%;
+	font-size: 18px;
+	border-radius: 3%;
+	height: 400px;
+	background-color: #f3f3f3;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title-product {
+	color: rgb(255, 0, 0);
+	font-size: 30px;
+	line-height: 36px;
+	font-family: "Product Sans";
+	margin: 0px;
+	margin-bottom: 10px;
+	font-weight: 400
+}
+
+.price-box {
+	width: 42%;
+	margin: 8px 8px 15px !important;
+	line-height: 24px;
+	font-weight: 400;
+	text-transform: uppercase;
+	display: inline-block;
+	height: 45px;
+	padding: 15px 30px 15px;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-transform: skew(10deg);
+	-ms-transform: skew(10deg);
+	-o-transform: skew(10deg);
+	transform: skew(10deg);
+	background-color: #b3a99c;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flex;
+	display: -o-inline-flex;
+	display: inline-flex
+}
+
+.price-box-sale {
+	width: 46%;
+	margin: 8px 8px 15px !important;
+	line-height: 24px;
+	font-weight: 400;
+	text-transform: uppercase;
+	display: inline-block;
+	height: 45px;
+	padding: 15px 30px 15px;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-transform: skew(10deg);
+	-ms-transform: skew(10deg);
+	-o-transform: skew(10deg);
+	transform: skew(10deg);
+	background-color: #f7941d;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flex;
+	display: -o-inline-flex;
+	display: inline-flex
+}
+
+.product-price {
+	font-size: 28px;
+	line-height: 30px;
+	display: inline-block;
+	color: #fff;
+	font-weight: bold
+}
+
+.discount-price {
+	color: #13293b;
+	text-decoration: line-through;
+}
+
+.sale-price {
+	color: red;
+}
+
+.pad5 {
+	padding: 5px;
+}
+
+.btn-add-to-cart {
+	font-size: 1.5rem; /* Tăng kích thước chữ */
+	padding: 1rem 2rem; /* Tăng kích thước đệm trong */
+}
+
+/* Tăng kích thước của nút "Mua ngay" */
+.btn-buy-now {
+	font-size: 1.5rem; /* Tăng kích thước chữ */
+	padding: 1rem 2rem; /* Tăng kích thước đệm trong */
+}
+
+.header {
+	color: white;
+	margin-left: 12%;
+	margin-top: 10px;
+	font-size: 33px;
+}
+</style>
+			
 		</head>
 
 		<body>
-			<div class="container-fluid ">
 
-				<div class="header">
-					<label>Thông tin chi tiết sản phẩm</label>
+	<div class="container">
+	<div class="header">
+					<label>Thông tin sản phẩm</label>
 				</div>
+		<div class="row">
+		
+			<div class="col-md-1 d-flex flex-column align-items-stretch">
 
-				<div class="row khung">
-					<div class="col-5">
-
-						<div id="myCarousel" class="carousel slide " data-ride="carousel">
+				
+    
+                 <c:forEach var="linkAnh" items="${mh.getHinhanhmhs()}" varStatus="status">
+									<div class="row bg-primary flex-grow-1 mt-2 ">
+										<img src="${linkAnh.getDuongdan()}" alt="Hình Ảnh ${status.index + 1}"
+											class="d-block w-100 img-fluid">
+									 </div>
+								</c:forEach>
+           
+          
+			</div>
+			<div class="col-md-4">
+				<div id="myCarousel" class="carousel slide " data-ride="carousel">
 							<!-- Slides (hình ảnh) -->
 							<div class="carousel-inner">
 								<c:forEach var="linkAnh" items="${mh.getHinhanhmhs()}" varStatus="status">
 									<div class="carousel-item khung_anh ${status.first ? 'active' : ''}">
 										<img src="${linkAnh.getDuongdan()}" alt="Hình Ảnh ${status.index + 1}"
-											class="d-block w-100">
+											class="d-block w-100 img-fluid">
 									</div>
 								</c:forEach>
 							</div>
@@ -51,61 +186,197 @@
 									class="carousel-control-next-icon"></span>
 							</a>
 						</div>
-
-						<div class="container mt-5"></div>
-
-					</div>
-					<div class="col">
-						<div class="card mx-auto khung_inf">
+				
+			</div>
+			<div class="col-md-7">
+			
+			<div class="card mx-auto khung_inf ">
 							<div class="card-body ml-20">
 								<input type="hidden" id="productId" value="${mh.getMamh()}">
 								<ul class="list-group list-group-flush">
 
-									<li class="list-group-item"><strong class="mr-2">
-											Sản phẩm :</strong> <span>${mh.getTenmh()}</span></li>
-									<li class="list-group-item"><strong class="mr-2">Thương
-											hiệu:</strong> <span>${mh.getNhanhieu().getTennh()}</span></li>
+								<li class="list-group-item text-center">
+								 <%--  <strong class="mr-2">${className}</strong> --%>
+								  <span class="title-product">${mh.getTenmh()}</span>
+								</li>
+							<c:choose>
+   <c:when test="${className == 'Book'}">
+  <div class="book-details">
+    <ul class="d-flex justify-content-between align-items-center" style="padding: 5px;">
+      <li class="list-item">
+      Tác giả:
+        <strong class="font-weight-bold"> <i>${mh.getTacgia()}</i></strong>
+        
+      </li>
+      <li class="list-item">
+      Thể loại:
+        <strong class="font-weight-bold">  ${mh.getLoaimh().getTenloaimh()} </strong>
+      
+      </li>
+    </ul>
 
-									<li class="list-group-item"><strong class="mr-2">Giá:</strong>
-										<span data-gia="${gia }" id="giaBan"></span>
-									</li>
-									<li class="list-group-item"><strong class="mr-2">Kích
-											thước:</strong> <select id="sizeSelect" class="form-select">
-											<c:forEach var="CTSize" items="${mh.getCtsizes()}">
-												<option value="${CTSize.getSize().getMasize()}">
-													${CTSize.getSize().getTensize()}</option>
-											</c:forEach>
-										</select></li>
-									<li class="list-group-item"><strong class="mr-2">Mô
-											tả:</strong> <span>${mh.getMota()}</span></li>
+    <ul class="d-flex justify-content-between align-items-center"style="padding: 5px;">
+      <li class="list-item">
+      Nhà xuất bản:
+        <strong class="font-weight-bold"> ${mh.getNhaXuatBan()} </strong>
+       
+      </li>
+      <li class="list-item">
+      Xuất bản:
+        <strong class="font-weight-bold"> ${mh.getNamXuatBan()} </strong>
+       
+      </li>	
+    </ul>
 
-									<li class="list-group-item d-flex"><strong class="mr-2">Điểm
-											đánh giá:</strong>
+    <ul class="d-flex justify-content-between align-items-center pad5">
+      <li class="list-item">
+      Số trang:
+        <strong class="font-weight-bold">${mh.getSoTrang()} </strong>
+         Trang
+      </li>
+    </ul>
+  </div>
+</c:when>
+    <c:when test="${className == 'Pen'}">
+        <!-- Hiển thị các thẻ liên quan tới Pen -->
+        <ul class="d-flex justify-content-between align-items-center pad5">
+            <li class="list-inline-item "> <strong class="ml-2">Loại bút: </strong>
+            
+             <c:choose>
+		        <c:when test="${mh.getLoaiBut() == 'butMuc'}">
+		        	  Bút mực
+		        </c:when>
+		           <c:when test="${mh.getLoaiBut() == 'butChi'}">
+		        	  Bút chì
+		        </c:when>
+		        
+		        <c:otherwise>
+		         	 Bút máy
+        </c:otherwise>
+          </c:choose>
+            
+            </li>
+            <li class="list-inline-item "> <strong class="ml-2">Màu sắc: </strong>${mh.getMauSac()}</li>
+            <!-- Các thẻ liên quan tới Pen -->
+        </ul>
+         <li class="list-group-item"><strong class="mr-2">Thương
+                    hiệu:</strong> <span>${mh.getNhanhieu().getTennh()}</span></li>
+    </c:when>
+    <c:when test="${className == 'Stationery'}">
+        <!-- Hiển thị các thẻ liên quan tới Stationery -->
+         <ul class="d-flex justify-content-between align-items-center pad5">
+            <li class="list-inline-item "> <strong class="ml-2">Loại tập: </strong>
+            <c:choose>
+		        <c:when test="${mh.getLoaiTap() == 'loaiKt'}">
+		        	  Tập kiểm tra
+		        </c:when>
+		           <c:when test="${mh.getLoaiTap() == 'loaiHs'}">
+		        	  Tập học sinh
+		        </c:when>
+		        
+		        <c:otherwise>
+		         	 Tập sinh viên
+        </c:otherwise>
+          </c:choose>
+        </li>
+            <li class="list-inline-item "> <strong class="ml-2">Ô ly: </strong> 
+            <c:choose>
+		        <c:when test="${mh.getLoaiOly() == 'loai4'}">
+		        	  4 ô
+		        </c:when>
+		           <c:when test="${mh.getLoaiTap() == 'loai5'}">
+		        	  5 ô
+		        </c:when>
+		        
+		        <c:otherwise>
+		         	 Kẻ ngang
+        </c:otherwise>
+          </c:choose></li>
+            <!-- Các thẻ liên quan tới Stationery -->
+        </ul>
+           <ul class="d-flex justify-content-between align-items-center pad5">
+           <li class="list-inline-item "> <strong class="ml-2">Số Trang: </strong>${mh.getSoTrangTap()}</li>
+            <!-- Các thẻ liên quan tới Stationery -->
+        </ul>
+         <li class="list-group-item"><strong class="mr-2">Thương
+                    hiệu:</strong> <span>${mh.getNhanhieu().getTennh()}</span></li>
+    </c:when>
+    <c:otherwise>
+         <li class="list-group-item"><strong class="mr-2">Thương
+                    hiệu:</strong> <span>${mh.getNhanhieu().getTennh()}</span></li>
+    </c:otherwise>
+</c:choose>
+
+							
+									
+							<li class="list-group-item d-flex"><strong class="mr-2"></strong>
 										<div id="rating-container">
 											<div id="rating-stars"></div>
 											<input type="hidden" id="danhGia" value="${danhGia}">
 											<div id="rating-score"></div>
 										</div>
 									</li>
+						<div>
+						
+						<c:if test="${mucGiamGia <=0 }">
+						  <li class="list-group-item price-box-sale"><strong class="mr-2">Giá:</strong>
+										<span class="product-price" data-gia="${gia }" id="giaBan"></span>
+							</li>
+						  </c:if>
+							
+							<c:if test="${mucGiamGia>0}">
+							  <li class="list-group-item price-box discount-price "><strong class="mr-2">Giá:</strong>
+										<span class="product-price discount-price " data-gia="${gia }" id="giaBan"></span>
+							</li>
+								<li class="list-group-item price-box-sale sale-price" id="priceItem">
+							  <strong class="mr-2">Sale:</strong>
+							  <span class="product-price " id="giaBanMoi">${giaMoi} VND </span>
+							</li>
+							
+							
+						  </c:if>
+							
+							
+						
+						
+						</div>
+							<%-- 
+									<li class="list-group-item"><strong class="mr-2">Kích
+											thước:</strong> <select id="sizeSelect" class="form-select">
+											<c:forEach var="CTSize" items="${mh.getCtsizes()}">
+												<option value="${CTSize.getSize().getMasize()}">
+													${CTSize.getSize().getTensize()}</option>
+											</c:forEach>
+										</select></li> --%>
+										
+									<li class="list-group-item"><strong class="mr-2">Mô
+											tả:</strong> <span>${mh.getMota()}</span></li>
+
+									
 								</ul>
 
 								<div class="text-center mt-4">
 									<!-- Nút "Thêm vào giỏ hàng" với hiệu ứng thu nhỏ hình ảnh -->
-									<button id="btnThemGH" name="btnThemGH" class="btn btn-success btn-add-to-cart lg">
+									<button id="btnThemGH" name="btnThemGH" class="btn btn-success btn-add-to-cart btn-lg ">
 										<i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
 									</button>
 									<!-- Nút "Mua ngay" -->
-									<button class="btn btn-primary btn-buy-now lg" id="muaNgay">
+									
+									<button class="btn btn-primary btn-buy-now btn-lg  " id="muaNgay">
 										<i class="fas fa-shopping-bag"></i> Mua ngay
 									</button>
 								</div>
 							</div>
 
 						</div>
+			</div>
+		</div>
+	</div>
 
-
-					</div>
-				</div>
+		<div class="container mt-2" style="height:500px; background-color:black">
+  
+		</div>
+				
 				<div class="row khung">
 
 					<section class="container my-5">
@@ -175,10 +446,31 @@
 						</div>
 					</section>
 				</div>
+		
+		
+		
+		<!--ket thuc sp  -->
 			</div>
 
 			<!-- định dạng tiền tệ -->
 			<script>
+			
+			// Lấy phần tử span có id là "giaBan"
+			const giaBanElement2 = document.getElementById('giaBanMoi');
+			
+
+			//Lấy giá trị của biến gia từ môi trường view
+			const giaMoi = giaBanElement.getAttribute('data-giaMoi');
+			
+			// Tạo đối tượng Intl.NumberFormat và định dạng giá
+			const formatter = new Intl.NumberFormat('vi-VN', {
+				style: 'currency',
+				currency: 'VND',
+			});
+			
+			// Định dạng giá và đặt nội dung cho phần tử span
+			
+			giaBanElement.textContent = formatter.format(giaMoi);
 				// Lấy thẻ span theo ID
 				var priceSpan = document.getElementById("priceSpan");
 

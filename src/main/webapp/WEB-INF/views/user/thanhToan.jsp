@@ -1,3 +1,4 @@
+<%@ include file="/common/taglib.jsp" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -56,17 +57,85 @@
 									</div>
 
 									<div class="product-row product-details">
-										<p class="card-text product-details">
-											<strong>Thương hiệu: </strong>
-											${sp.getCtSize().getMathang().getNhanhieu().getTennh()}
-										</p>
-										<p class="card-text product-details">
-											<strong>Chất liệu: </strong>${sp.getCtSize().getMathang().getChatlieu().getTenvai()}
-										</p>
-										<p class="card-text product-details">
-											<strong>Kích thước: </strong>${sp.getCtSize().getSize().getTensize()}
-										</p>
+									
+									<!-- check class  -->
+									
+									<c:choose>
+									 <c:when test="${sp.getCtSize().getMathang().getClass().getSimpleName().equals('Book')}">
+    <div class="card-text product-details">
+        <p>
+            <strong>Tác giả:</strong> ${facade.getBook(sp.getCtSize().getMathang().getMamh()).getTacgia()}
+        </p>
+          <p>
+            <strong>Năm Xuất Bản: </strong> ${facade.getBook(sp.getCtSize().getMathang().getMamh()).getNamXuatBan()}
+        </p>
+       
+    </div>
+      <div class="card-text product-details">
+        
+        <p>
+            <strong>Nhà Xuất Bản: </strong> ${facade.getBook(sp.getCtSize().getMathang().getMamh()).getNhaXuatBan()}
+        </p>
+      
+    </div>
+</c:when>
+
+									  
+									  
+									  
+									  
+									<c:when test="${sp.getCtSize().getMathang().getClass().getSimpleName().equals('Pen')}">
+    <div class="card-text product-details">
+        <p>
+            <strong>Thương hiệu: </strong> ${sp.getCtSize().getMathang().getNhanhieu().getTennh()}
+        </p>
+          <p>
+            <strong>Loại bút:${sp.getCtSize().getMathang().getMamh()} </strong> ${facade.getPen(sp.getCtSize().getMathang().getMamh()).getLoaiBut()}
+        </p>
+        
+    </div>
+     <div class="card-text product-details">
+       
+      
+        <p>
+            <strong>Màu sắc: </strong> ${facade.getPen(sp.getCtSize().getMathang().getMamh()).getMauSac()}
+        </p>
+    </div>
+</c:when>
+
+									
+									  <c:when test="${sp.getCtSize().getMathang().getClass().getSimpleName().equals('Stationery')}">
+    <div class="card-text product-details">
+        <p>
+            <strong>Thương hiệu: </strong> ${sp.getCtSize().getMathang().getNhanhieu().getTennh()}
+        </p>
+        <p>
+            <strong>Loại tập: </strong> ${facade.getStationery(sp.getCtSize().getMathang().getMamh()).getLoaiTap()}1111
+        </p>
+    </div>
+    <div class="card-text product-details">
+        <p>
+            <strong>Ô ly: </strong> ${facade.getStationery(sp.getCtSize().getMathang().getMamh()).getLoaiOly()}
+        </p>
+        <p>
+            <strong>Số trang: </strong> ${facade.getStationery(sp.getCtSize().getMathang().getMamh()).getSoTrangTap()} Trang
+        </p>
+    </div>
+</c:when>
+
+									  
+									  
+									   </c:choose> 
+									  
+									  
+										
+									
+										
 									</div>
+									  
+									
+									
+									   
 									<div class="product-row product-details product-quantity">
 										<p class="card-text product-details product-quantity">
 											<strong>Đơn giá: </strong><span id="donGia"

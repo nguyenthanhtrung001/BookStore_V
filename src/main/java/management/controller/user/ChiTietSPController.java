@@ -45,15 +45,20 @@ import management.dao.IMatHangDao;
 import management.dao.IThanhToanDAO;
 import management.DTO.GioHangDto;
 import management.DTO.Product_Paying;
+import management.entity.Book;
 import management.entity.Ctpd;
 import management.entity.CtpdId;
 import management.entity.Ctsize;
 import management.entity.CtsizeId;
 import management.entity.Danhgia;
+import management.entity.DefaultMathang;
 import management.entity.Hinhanhmh;
 import management.entity.Khachhang;
 import management.entity.Mathang;
+import management.entity.Pen;
 import management.entity.Phieudat;
+import management.entity.Stationery;
+import management.facade.ProductFacade;
 
 @Controller
 @Transactional
@@ -119,11 +124,16 @@ public class ChiTietSPController {
 	@RequestMapping("/chi-tiet-sp/{id}")
 	public ModelAndView CTSP(@PathVariable("id") int id) throws ServletException, IOException {
 
+		
 		ModelAndView mav = new ModelAndView("user/chiTietSP");
 
 		Mathang mh = donHangDao.layMatHangTheoID(id);
 
 		int gia = donHangDao.LayGiaSP(id);
+		int mucGiamGia=0;
+		 mucGiamGia=(int) matHangDao.getDiscount_Product(mh);
+		int giamoi=gia-((gia*mucGiamGia)/100);
+		
 
 		float tongDanhGia = 0;
 		float danhGia = 0;
@@ -141,11 +151,48 @@ public class ChiTietSPController {
 		for (Hinhanhmh anh : mh.getHinhanhmhs()) {
 			anh.getDuongdan();
 		}
+		
+		 if (mh instanceof Book) {
+	    	 Book book = new Book ();
+	    	 book=(Book) mh;
+	    	 System.out.println("book");
+	    	 mav.addObject("mh", book);
+	    	 mav.addObject("className", "Book");
+	    	 System.out.println("Tac giả:"+book.getTacgia());
+	    	 
+	    	
+	    }
+	    if (mh instanceof Pen) {
+	    	Pen Pen = (Pen) mh;
+	    	System.out.println("Pen");
+	    	mav.addObject("mh", Pen);
+	    	 mav.addObject("className", "Pen");
+	    	 
+	    	
+	    }
+	    if (mh instanceof Stationery) {
+	    	Stationery Stationery = (Stationery) mh;
+	    	System.out.println("Stationery");
+	    	mav.addObject("mh", Stationery);
+	    	 mav.addObject("className", "Stationery");
+	    	
+	    	
+	    }
+	    if (mh instanceof DefaultMathang) {
+	    	DefaultMathang DefaultMathang = (DefaultMathang) mh;
+	    	System.out.println("DefaultMathang");
+	    	mav.addObject("mh", DefaultMathang);
+	    	mav.addObject("className", "DefaultMathang");
+	    	 
+	    	
+	    }
 
 		mh.getHinhanhmhs();
 
 		mav.addObject("gia", gia);
-		mav.addObject("mh", mh);
+		mav.addObject("giaMoi", giamoi);
+		mav.addObject("mucGiamGia", mucGiamGia);
+		
 		mav.addObject("danhGia", danhGia);
 //		String listMHStr = getRecommendation(id + "");
 //		
@@ -219,6 +266,11 @@ public class ChiTietSPController {
 
 		ModelAndView mav = new ModelAndView("user/thanhToan");
 
+		
+		
+		
+		
+		
 		// Lớp để tách chuỗi Json
 		ObjectMapper objectMapper = new ObjectMapper();
 
@@ -232,10 +284,20 @@ public class ChiTietSPController {
 			List<ThanhToanDto> DSSP = new ArrayList<ThanhToanDto>();
 			Integer tongTien = 0;
 			int soLuongSP = 0;
-
+			
+			ProductFacade facade= new ProductFacade();
 			// Duyệt qua danh sách sản phẩm và truy cập idProduct, quantity, và size
 			for (Product_Paying product : selectedProducts) {
-
+				
+				Mathang mh = donHangDao.layMatHangTheoID(product.getIdProduct());
+				
+				facade.addProduct(mh);
+				System.out.println(facade.getBook(1).getTacgia());
+				
+				
+				
+				
+				
 				ThanhToanDto tmp = new ThanhToanDto();
 
 				Ctsize ctsize = thanhToanDAO.layCtSize(product.getIdProduct(), product.getSize());
@@ -270,6 +332,7 @@ public class ChiTietSPController {
 
 				mav.addObject("dsspJson", dsspJson);
 				mav.addObject("dssp", DSSP);
+				mav.addObject("facade", facade);
 				mav.addObject("tongTien", tongTien);
 				mav.addObject("soLuongSP", soLuongSP);
 			} catch (Exception e) {

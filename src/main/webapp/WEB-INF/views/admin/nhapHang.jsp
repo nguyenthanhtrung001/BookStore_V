@@ -16,6 +16,7 @@
 
 <!-- Thêm tệp JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="<c:url value='/templates/user/js/chiTietSP.js'/>"></script>
 
 
 <%-- <link rel="stylesheet"
@@ -331,7 +332,7 @@
 												name="loaiTap" class="form-control">
 												<option value="">Chọn loại tập</option>
 												<option value="loaiHs">Tập học sinh</option>
-												<option value="loaiVv">Tập sinh viên</option>
+												<option value="loaiSv">Tập sinh viên</option>
 												<option value="loaiKt">Tập kiểm tra</option>
 											</select>
 										</div>
