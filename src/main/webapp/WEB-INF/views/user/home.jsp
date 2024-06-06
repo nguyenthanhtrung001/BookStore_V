@@ -6,7 +6,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Cửa hàng thời trang</title>
+            <title>BookStore</title>
           
             <style>
                 .custom-padding {
@@ -31,11 +31,11 @@
 
 
 
-            <!-- Slide -->
-            <div class="container" style="margin-top: 5%;">
+            <!-- Slide style="margin-top: 5%;-->
+            <div class="container" ">
                 <div class="loader"></div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
 
                         <div class="row">
                             <div class="col-md-12">
@@ -51,7 +51,7 @@
 										</script>
                                  </div>
                                         
-								<c:forEach var="i" begin="2" end="4">
+								<c:forEach var="i" begin="2" end="3">
 									<div class="carousel-item ">
 
 										<div id="firebase-image-slide${i}" ></div>
@@ -83,36 +83,138 @@
                         <div class="row ml-2">
                             <h2 style="color: #9ca0a2">Danh mục sản phẩm</h2>
                         </div>
+						
+						
+						<!-- Danh mục 4-sp -->
+						<div class="row ml-2">
+		
+							<div class="col-md-3 mt-3">
+								<div class="card product-card card-h-set-150">
+									<a href="/product/books"> <!-- Ảnh sản phẩm -->
+										  <img src="https://firebasestorage.googleapis.com/v0/b/webthoitrang-cfe5c.appspot.com/o/images%2FUi%2Fbook?alt=media&token=8263635b-dec0-490a-b6e2-0d3899139519"
+                                        class="d-block mx-auto img-fluid" alt="Sản phẩm 1" style="width: 100%; height: 125px;">
+		
+									</a>
+									
+		
+									<h4 class="card-title text-center font-weight-bold mt-2">
+										<small><strong>SÁCH</strong></small>
+									</h4>
+								</div>
+							</div>
+							
+							<div class="col-md-3 mt-3">
+								<div class="card product-card card-h-set-150">
+									<a href="/product/pens"> <!-- Ảnh sản phẩm -->
+										  <img src="https://firebasestorage.googleapis.com/v0/b/webthoitrang-cfe5c.appspot.com/o/images%2FUi%2Fpen?alt=media&token=db622633-80a2-42d3-a24d-8c271995ffc1"
+                                        class="d-block mx-auto img-fluid" alt="Sản phẩm 1" style="width: 100%; height: 125px;">
+		
+									</a>
+									
+		
+									<h4 class="card-title text-center font-weight-bold mt-2">
+										<small><strong>BÚT/ VIẾT</strong></small>
+									</h4>
+								</div>
+							</div>
+							
+							<div class="col-md-3 mt-3">
+								<div class="card product-card card-h-set-150">
+									<a href="/product/stationerys"> <!-- Ảnh sản phẩm -->
+										  <img src="https://firebasestorage.googleapis.com/v0/b/webthoitrang-cfe5c.appspot.com/o/images%2FUi%2Ftap?alt=media&token=e6ab4881-25b4-4714-89ca-86b78761ca4e"
+                                        class="d-block mx-auto img-fluid" alt="Sản phẩm 1" style="width: 100%; height: 125px;">
+		
+									</a>
+									
+		
+									<h4 class="card-title text-center font-weight-bold mt-2">
+										<small><strong>TẬP/ VỞ</strong></small>
+									</h4>
+								</div>
+							</div>
+							<div class="col-md-3 mt-3">
+								<div class="card product-card card-h-set-150">
+									<a href="/product/defaults"> <!-- Ảnh sản phẩm -->
+										  <img src="https://firebasestorage.googleapis.com/v0/b/webthoitrang-cfe5c.appspot.com/o/images%2FUi%2FVPP?alt=media&token=16b90924-8e4c-4520-8321-6ca096b2afa2"
+                                        class="d-block mx-auto img-fluid" alt="Sản phẩm 1" style="width: 100%; height: 125px;">
+		
+									</a>
+									
+		
+									<h4 class="card-title text-center font-weight-bold mt-2">
+										<small><strong>KHÁC</strong></small>
+									</h4>
+								</div>
+							</div>
 
-                        <div class="row ml-2">
+				</div>
 
-                            <c:forEach var="categogy" items="${listCategory}">
 
-                                <div class="col-md-3 mt-3">
-                                    <div class="card product-card card-h-set-150" >
-                                        <a href="/product/category?category=${categogy.slug}">
-                                             <!-- Ảnh sản phẩm -->
-                                       <div id="firebase-image-category${categogy.maloaimh}" ></div>
-								<script>
-								displayFirebaseImageCategory("${categogy.maloaimh}");
-								</script>
-								
-								 </a>
-                                        <div class="card-body">
-                                          
-                                        </div>
-                                        
-                                          <h5 class="card-title text-center font-weight-bold">
-                                                <small><strong>${categogy.tenloaimh}</strong></small>
-                                            </h5>
-                                    </div>
-                                </div>
-                            </c:forEach>
+
+				<div class="row ml-2" >
+						 
+					<div class="col-md-6" >
+
+                      	  <div class="container">
+                        	 <div class="row ml-2 mt-2">
+                            <h2 style="color: #9ca0a2">Thể loại sách</h2>
+                    	    </div>
+                        
+                            <div class="row">
+                               
+		                                <c:forEach var="categogy" items="${listCategory}">
+		
+		                                <div class="col-md-3 mt-3">
+		                                    <div class="card product-card card-h-set-150" >
+		                                        <a href="/product/category?category=${categogy.slug}">
+		                                             <!-- Ảnh sản phẩm -->
+		                                       <div id="firebase-image-category${categogy.maloaimh}" ></div>
+										<script>
+											displayFirebaseImageCategory("${categogy.maloaimh}");
+										</script>
+										
+										 </a>
+		                                        <div class="card-body">
+		                                          
+		                                        </div>
+		                                        
+		                                          <h5 class="card-title text-center font-weight-bold">
+		                                                <small><strong>${categogy.tenloaimh}</strong></small>
+		                                            </h5>
+		                                    </div>
+		                                </div>
+		                            </c:forEach>
+                            </div>
 
                         </div>
 
                     </div>
-                    <div class="col-md-6">
+                    
+                    <div class="col-md-6" >
+
+                        <div class="container">
+                         <div class="row mt-2">
+                            <h2 style="color: #9ca0a2">---</h2>
+                    	    </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img src="https://cdn0.fahasa.com/media/magentothem/banner7/Tapvo_SlideBanner_T06.jpg"
+                                        class="d-block mx-auto" alt="Sản phẩm 1" style="max-width: 100%; height: 320px;">
+                                </div>
+                                 
+                            </div>
+
+                        </div>
+
+                    </div>
+						
+                           
+
+                        </div>
+
+                    </div>
+                    
+                    <!-- <div class="col-md-6" >
 
                         <div class="container">
                             <div class="row">
@@ -125,10 +227,38 @@
                         </div>
 
                     </div>
+                     -->
                 </div>
             </div>
-          
-            <!-- Phần gợi ý sản phẩm -->
+
+
+<!-- bar----  -->
+	<div class="col-md-12 mt-4">
+
+		<div class="row ">
+			<div class="col-md-12">
+
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<img
+								src="https://bizweb.dktcdn.net/100/364/248/themes/736344/assets/banner.jpg?1716195728231"
+								class="d-block mx-auto" alt="Sản phẩm 1"
+								style="max-width: 100%; height: auto;">
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<!-- Phần gợi ý sản phẩm -->
              <c:if test="${not empty listProductSmart}">
      <section class="container my-5">
     <h2 style="color: #9ca0a2">Gợi ý hôm nay</h2>
@@ -249,13 +379,14 @@
 
             <!-- Bán đang được ưu đãi -->
             <section class="container my-5">
-                <h2 style="color: #9ca0a2">Sản phẩm giảm mạnh</h2>
+             <div class="display-2 font-weight-bold" style="color: red; margin-left: 44px;">FLASH SALE</div>
+               
                 <div class="row">
                     <div class="col-md-6">
                         <div class="container">
                             <div class="row">
-                                <img src="https://cmsv2.yame.vn/uploads/12378f1a-4211-4ea8-be56-81caf817e885/thumb-1053x1260.jpg?quality=80&w=700&h=0"
-                                    class="d-block mx-auto" alt="Sản phẩm 1" style="max-width: 100%; height: auto;">
+                                <img src="https://cdn0.fahasa.com/media/catalog/product/l/h/lhmn-phienbanmoi-tap6-364_1.jpg?_gl=1*1d7oth3*_ga*MjgwOTg0ODE2LjE3MTc1ODMxMTg.*_ga_460L9JMC2G*MTcxNzU4MzExOC4xLjEuMTcxNzU4MzI5OC40My4wLjEwNTY0NDMzNDk.*_gcl_au*MTE1NjY3Mjg2OS4xNzE3NTgzMTE4"
+                                    class="d-block mx-auto" alt="Sản phẩm 1" style="max-width: 100%; height: 650px;">
                             </div>
                         </div>
 
@@ -329,8 +460,8 @@
 
 
             </section>
-
-            <!-- trang trí web -->
+<!-- 
+            trang trí web
             <section class="container my-5">
 
                 <div class="row">
@@ -339,14 +470,14 @@
 
                         <div class="row ">
                             <div class="col-md-12 text-center">
-                                <!-- Sử dụng class "text-center" để căn giữa theo chiều ngang -->
+                                Sử dụng class "text-center" để căn giữa theo chiều ngang
                                 <div class="display-1 font-weight-bold text-white" style="margin-top: 35%">SPEED
                                     COLLECTION</div>
                                 <div class="text-white  text-left">
                                     <h2>Những kiểu dáng ấn tượng, những phối màu phá cách tạo
                                         nên một phong cách thời trang đậm chất TAY ĐUA hiện đại~</h2>
                                 </div>
-                                <!-- Sử dụng class "font-weight-bold" để làm nổi bật và "text-primary" để đổi màu văn bản -->
+                                Sử dụng class "font-weight-bold" để làm nổi bật và "text-primary" để đổi màu văn bản
                             </div>
                         </div>
 
@@ -375,7 +506,7 @@
 
             </section>
 
-            <!-- trang trí web 2 -->
+            trang trí web 2
             <section class="container my-5">
 
                 <div class="row">
@@ -393,7 +524,7 @@
 
                         <div class="row ">
                             <div class="col-md-12 text-center" style="margin-top: 45%">
-                                <!-- Sử dụng class "text-center" để căn giữa theo chiều ngang -->
+                                Sử dụng class "text-center" để căn giữa theo chiều ngang
                                 <div class="display-1 font-weight-bold text-white">THE DAY'S
                                     EYE</div>
                                 <div class="text-white  text-left">
@@ -401,7 +532,7 @@
                                         ngày”. Có lẽ vì hoa nở cùng với ánh sáng ban mai rồi khép lại
                                         những cánh trắng khi chiều xuống: chính là Daisy</h2>
                                 </div>
-                                <!-- Sử dụng class "font-weight-bold" để làm nổi bật và "text-primary" để đổi màu văn bản -->
+                                Sử dụng class "font-weight-bold" để làm nổi bật và "text-primary" để đổi màu văn bản
                             </div>
                         </div>
 
@@ -421,7 +552,7 @@
 
             </section>
 
-            <!-- trang trí web 3 -->
+            trang trí web 3
             <section class="container my-5">
 
                 <div class="row">
@@ -430,7 +561,7 @@
 
                         <div class="row ">
                             <div class="col-md-12 text-center">
-                                <!-- Sử dụng class "text-center" để căn giữa theo chiều ngang -->
+                                Sử dụng class "text-center" để căn giữa theo chiều ngang
                                 <div class="display-1 font-weight-bold text-white" style="margin-top: 45%">JAPANESE
                                     HORROR STORIES</div>
                                 <div class="text-white  text-left">
@@ -438,7 +569,7 @@
                                         về bộ ba Quỷ Thần đầy lôi cuốn trong truyền thuyết. Hồ ly
                                         Kisune, Tengu hay Oni sẽ thao túng tâm lý bạn?~</h2>
                                 </div>
-                                <!-- Sử dụng class "font-weight-bold" để làm nổi bật và "text-primary" để đổi màu văn bản -->
+                                Sử dụng class "font-weight-bold" để làm nổi bật và "text-primary" để đổi màu văn bản
                             </div>
                         </div>
 
@@ -471,7 +602,7 @@
 
             </section>
 
-
+ -->
 
             <script>
                 // Để ẩn loader sau khi trang đã tải hoàn toàn

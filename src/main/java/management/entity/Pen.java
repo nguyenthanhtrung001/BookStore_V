@@ -1,5 +1,6 @@
 package management.entity;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -9,8 +10,9 @@ import management.DTO.ProductDTO;
 @DiscriminatorValue("Pen")
 public class Pen extends Mathang {
 	
+	@Column(columnDefinition = "NVARCHAR(255)")
     private String mauSac;
-    
+	@Column(columnDefinition = "NVARCHAR(255)")
     private String loaiBut;
     
     

@@ -13,10 +13,8 @@
 <script src="<c:url value='/templates/user/product/productCategory.js'/>"></script>
 </head>
 <body>
-	<div class="container" style="margin-top: 4%;">
+	<div class="container" style="margin-top: 1%;">
 		<div class="row">
-
-
 
 			<div class="col-md-12 bg-dark text-white">
 				<div class="d-flex align-items-center">
@@ -24,14 +22,62 @@
 					<h5 class="page-title">${nameCategory}</h5>
 				</div>
 			</div>
+			
+				
+				<div class="col col-12" >
+				
+						<!-- Danh mục 4-sp -->
+						<div class="row" style="color:white;"	>
+
+					<div class="col-md-3 mt-3" >
+						<div class="card product-card" style=" background: #850f0f;"
+							onclick="window.location.href='/product/books'">
+							<h4 class="card-title text-center font-weight-bold mt-2">
+								<small ><strong>SÁCH</strong></small>
+							</h4>
+						</div>
+					</div>
+					<div class="col-md-3 mt-3" >
+						<div class="card product-card" style=" background: #850f0f;"
+							onclick="window.location.href='/product/pens'">
+							<h4 class="card-title text-center font-weight-bold mt-2" >
+								<small><strong>BÚT/ VIẾT</strong></small>
+							</h4>
+						</div>
+					</div>
+					<div class="col-md-3 mt-3">
+						<div class="card product-card" style=" background: #850f0f;"
+							onclick="window.location.href='/product/stationerys'">
+							<h4 class="card-title text-center font-weight-bold mt-2">
+								<small><strong>TẬP/ VỞ</strong></small>
+							</h4>
+						</div>
+					</div>
+					<div class="col-md-3 mt-3">
+						<div class="card product-card" style=" background: #850f0f;"
+							onclick="window.location.href='/product/defaults'">
+							<h4 class="card-title text-center font-weight-bold mt-2">
+								<small><strong>VĂN PHÒNG PHẢM KHÁC</strong></small>
+							</h4>
+						</div>
+					</div>
+
+					
+
+				</div>
+				
+				</div>
+
+			
 		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group">
-					<label for="exampleComboBox">Chọn một mục:</label> <select
-						class="form-control bg-secondary text-white" id="categorySelect"
+					
+					 <select
+						class="form-control bg-secondary text-white mt-3" id="categorySelect"
 						name="selectedCategory" onchange="changeProductUrl(this.value)">
-						<option value="">Chọn một mục</option>
+						<option value="">Chọn một mục sách</option>
 						<!-- Tùy chọn mặc định -->
 						<c:forEach var="category" items="${listOfCategories}">
 							<option value="${category.slug}">${category.tenloaimh}</option>

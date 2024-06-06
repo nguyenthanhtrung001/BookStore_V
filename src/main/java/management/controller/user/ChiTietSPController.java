@@ -292,7 +292,7 @@ public class ChiTietSPController {
 				Mathang mh = donHangDao.layMatHangTheoID(product.getIdProduct());
 				
 				facade.addProduct(mh);
-				System.out.println(facade.getBook(1).getTacgia());
+			
 				
 				
 				

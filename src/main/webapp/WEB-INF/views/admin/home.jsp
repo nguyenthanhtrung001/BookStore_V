@@ -108,10 +108,10 @@
 									<thead>
 										<tr>
 											<th class="border-top-0">STT</th>
-											<th class="border-top-0">Thương Hiệu</th>
-											<th class="border-top-0">Danh Mục</th>
+											 <th class="border-top-0">Thương Hiệu</th>
+										<!-- 	<th class="border-top-0">Danh Mục</th> -->
 											<th class="border-top-0">Tên Sản Phẩm</th>
-											<th class="border-top-0">Chất Liệu</th>
+											<!-- <th class="border-top-0">Chất Liệu</th> -->
 											
 
 										</tr>
@@ -121,9 +121,9 @@
 										    <tr>
 										        <td>${status.index + 1}</td>
 										        <td class="txt-oflo">${product.mathang.nhanhieu.tennh}</td>
-										          <td class="txt-oflo">${product.mathang.loaimh.tenloaimh}</td>
+										        <%--   <td class="txt-oflo">${product.mathang.loaimh.tenloaimh}</td> --%>
 										        <td>${product.mathang.tenmh}</td>
-										         <td>${product.mathang.chatlieu.tenvai}</td>
+										        <%--  <td>${product.mathang.chatlieu.tenvai}</td> --%>
 										      
 										  		
 										    </tr>

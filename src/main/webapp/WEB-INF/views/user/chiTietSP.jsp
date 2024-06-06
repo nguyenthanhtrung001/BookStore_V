@@ -340,14 +340,14 @@
 						
 						
 						</div>
-							<%-- 
-									<li class="list-group-item"><strong class="mr-2">Kích
+							
+									<li class="list-group-item" style="display: none;"><strong class="mr-2">Kích
 											thước:</strong> <select id="sizeSelect" class="form-select">
 											<c:forEach var="CTSize" items="${mh.getCtsizes()}">
 												<option value="${CTSize.getSize().getMasize()}">
 													${CTSize.getSize().getTensize()}</option>
 											</c:forEach>
-										</select></li> --%>
+										</select></li> 
 										
 									<li class="list-group-item"><strong class="mr-2">Mô
 											tả:</strong> <span>${mh.getMota()}</span></li>

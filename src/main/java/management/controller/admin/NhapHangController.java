@@ -103,8 +103,6 @@ public class NhapHangController {
 		mav.addObject("dsChatLieu", dsChatLieu);
 		mav.addObject("dsNhanHieu", dsNhanHieu);
 
-		// Kiểm tra
-		System.out.println(dsNCC.get(0).getTenncc());
 
 		return mav;
 	}

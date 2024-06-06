@@ -48,37 +48,23 @@ public class Product_H_S_Controller {
 		
 		if (a.equals("") == false) {
 
-			List<Mathang> listProduct = new ArrayList<>();
+				List<Mathang> listProduct = new ArrayList<>();
 
-			if (a.equals("search") && (input.toLowerCase().contains("cao cấp")
-					|| input.toLowerCase().contains("tầm trung") || input.toLowerCase().contains("bình dân"))) {
-				if (input.toLowerCase().contains("cao cấp")) {
-					System.out.println("cao cấp");
-					input = input.replace("cao cấp", "");
-					input = input.replace("Cao Cấp", "");
-					input = input.replace("CAO CẤP", "");
-					listProduct = matHangDao.getMathangByPage_Nhan(page, "search", input, "", "Cao cap");
-				} else if (input.toLowerCase().contains("tầm trung")) {
-					System.out.println("tầm trung");
-					input = input.replace("tầm trung", "");
-					input = input.replace("Tầm Trung", "");
-					input = input.replace("TẦM TRUNG", "");
-					input = input.replace(" ", "");
-					System.out.println(input);
-					listProduct = matHangDao.getMathangByPage_Nhan(page, "search", input, "", "Tam trung");
-				} else if (input.toLowerCase().contains("bình dân")) {
-					System.out.println("bình dân");
-					input = input.replace("bình dân", "");
-					input = input.replace("Bình Dân", "");
-					input = input.replace("BÌNH DÂN", "");
-					input = input.replace(" ", "");
-					listProduct = matHangDao.getMathangByPage_Nhan(page, "search", input, "", "Binh dan");
+				if (a.equals("search")) {
+					
+				listProduct = matHangDao.getMathangByPage(page, "search", input, "");
+				System.out.println("-----777777------");
+				
+				for( Mathang mh : listProduct)
+				{
+					System.out.println(mh.getTenmh());
 				}
-				urlText = "Tìm Kiếm";
-				key = "search";
-				value = input;
-
-			} else if (a.equals("search")) {
+					
+					urlText = "Tìm Kiếm";
+					key = "search";
+					value = input;
+	
+				} else if (a.equals("search")) {
 
 				listProduct = matHangDao.getMathangByPage(page, "search", input, "");
 				urlText = "Tìm Kiếm";
@@ -113,6 +99,35 @@ public class Product_H_S_Controller {
 				listProduct = matHangDao.getMathangByPage(page, "category", "", category);
 				key = "category";
 				value = category;
+
+			}
+
+			if (a.equals("books")) {
+
+				listProduct = matHangDao.getMathangByPage(page, "books", "", "");
+				urlText = "Sách";
+				key = "books";
+
+			}
+			if (a.equals("pens")) {
+
+				listProduct = matHangDao.getMathangByPage(page, "pens", "", "");
+				urlText = "Bút/ Viết";
+				key = "pens";
+
+			}
+			if (a.equals("stationerys")) {
+
+				listProduct = matHangDao.getMathangByPage(page, "stationerys", "", "");
+				urlText = "Tập/ Vở";
+				key = "stationerys";
+
+			}
+			if (a.equals("defaults")) {
+
+				listProduct = matHangDao.getMathangByPage(page, "defaults", "", "");
+				urlText = "Văn phòng phẩm khác";
+				key = "defaults";
 
 			}
 

@@ -271,6 +271,7 @@
 		</div>
 		
 	</div>
+	</div>
 
 	<!-- Modal for adding promotion -->
 

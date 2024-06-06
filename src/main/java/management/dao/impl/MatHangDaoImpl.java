@@ -231,13 +231,14 @@ public class MatHangDaoImpl implements IMatHangDao {
 				input = "";
 			} else {
 				hql = "FROM Mathang M WHERE M.tenmh LIKE :partialTenmh "
-						+ "OR M.loaimh.tenloaimh LIKE :partialTenloaimh " + "OR M.chatlieu.tenvai LIKE :partialtenvai "
-						+ "OR M.nhanhieu.tennh LIKE :partialtennhanhieu " + "OR M.mota LIKE :partialmota";
+						+ "OR M.loaimh.tenloaimh LIKE :partialTenloaimh " 
+						+ "OR M.nhanhieu.tennh LIKE :partialtennhanhieu "
+						+ "OR M.mota LIKE :partialmota";
 
 				query = session.createQuery(hql);
 				query.setParameter("partialTenmh", "%" + input + "%");
 				query.setParameter("partialTenloaimh", "%" + input + "%");
-				query.setParameter("partialtenvai", "%" + input + "%");
+				
 				query.setParameter("partialmota", "%" + input + "%");
 				query.setParameter("partialtennhanhieu", "%" + input + "%");
 
@@ -268,10 +269,36 @@ public class MatHangDaoImpl implements IMatHangDao {
 			query.setParameter("slug", category);
 
 		}
+		if (title.equals("books")) {
+			String tmp="Book";
+			 hql = "FROM Mathang M WHERE TYPE(M) = "+tmp;
+			query = session.createQuery(hql);
+		}
+		if (title.equals("pens")) {
+			String tmp="Pen";
+			 hql = "FROM Mathang M WHERE TYPE(M) = "+tmp;
+			query = session.createQuery(hql);
+		}
+		if (title.equals("stationerys")) {
+			String tmp="Stationery";
+			 hql = "FROM Mathang M WHERE TYPE(M) = "+tmp;
+			query = session.createQuery(hql);
+		}
+		if (title.equals("stationerys")) {
+			String tmp="Stationery";
+			 hql = "FROM Mathang M WHERE TYPE(M) = "+tmp;
+			query = session.createQuery(hql);
+		}
+		if (title.equals("defaults")) {
+			String tmp="DefaultMathang";
+			 hql = "FROM Mathang M WHERE TYPE(M) = "+tmp;
+			query = session.createQuery(hql);
+		}
 
 		try {
 
 			List<Mathang> pageData = extracted(itemsPerPage, startIndex, query);
+			
 			return pageData;
 		} finally {
 			session.close();

@@ -47,7 +47,7 @@ body {
 	padding: 10px;
 	transition: transform 0.3s, background-color 0.3s, color 0.3s;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng shadow */
-	background-color: #E4D7D7;
+	background-color: #cce4ff;
 }
 
 .product-card:hover {

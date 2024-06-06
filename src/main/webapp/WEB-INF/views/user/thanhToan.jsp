@@ -7,13 +7,29 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Cửa Hàng Thời Trang</title>
+<title>BookStore</title>
 
 <link rel="stylesheet"
 	href='<c:url value="/templates/user/css/thanhToan.css"/>'>
 
 <script src='<c:url value="/templates/user/js/thanhToan.js"/>'
 	type="text/javascript"></script>
+	
+	<style>
+	
+	.product-card {
+	display: flex;
+	align-items: center;
+	border: 0.001px solid #333; /* Đổi màu và độ dày của đường viền */
+	border-radius: 5px;
+	margin-bottom: 15px;
+	padding: 10px;
+	transition: transform 0.3s, background-color 0.3s, color 0.3s;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng shadow */
+	background-color: #cce4ff;
+}
+	
+	</style>
 </head>
 
 <body>
@@ -90,7 +106,23 @@
             <strong>Thương hiệu: </strong> ${sp.getCtSize().getMathang().getNhanhieu().getTennh()}
         </p>
           <p>
-            <strong>Loại bút:${sp.getCtSize().getMathang().getMamh()} </strong> ${facade.getPen(sp.getCtSize().getMathang().getMamh()).getLoaiBut()}
+            <strong>Loại bút: </strong>
+            
+              <c:choose>
+		        <c:when test=" ${facade.getPen(sp.getCtSize().getMathang().getMamh()).getLoaiBut() == 'butMuc'}">
+		        	  Bút mực
+		        </c:when>
+		           <c:when test="${mh.getLoaiBut() == 'butChi'}">
+		        	  Bút chì
+		        </c:when>
+		        
+		        <c:otherwise>
+		         	 Bút máy
+        </c:otherwise>
+          </c:choose>
+            
+            
+            
         </p>
         
     </div>
@@ -110,12 +142,44 @@
             <strong>Thương hiệu: </strong> ${sp.getCtSize().getMathang().getNhanhieu().getTennh()}
         </p>
         <p>
-            <strong>Loại tập: </strong> ${facade.getStationery(sp.getCtSize().getMathang().getMamh()).getLoaiTap()}1111
+            <strong>Loại tập: </strong>
+            
+                        <c:choose>
+		        <c:when test="${facade.getStationery(sp.getCtSize().getMathang().getMamh()).getLoaiTap() == 'loaiKt'}">
+		        	  Tập kiểm tra
+		        </c:when>
+		           <c:when test="${mh.getLoaiTap() == 'loaiHs'}">
+		        	  Tập học sinh
+		        </c:when>
+		        
+		        <c:otherwise>
+		         	 Tập sinh viên
+        </c:otherwise>
+          </c:choose>
+            
+            
+            
+             
         </p>
     </div>
     <div class="card-text product-details">
         <p>
-            <strong>Ô ly: </strong> ${facade.getStationery(sp.getCtSize().getMathang().getMamh()).getLoaiOly()}
+            <strong>Ô ly: </strong> 
+            
+             <c:choose>
+		        <c:when test=" ${facade.getStationery(sp.getCtSize().getMathang().getMamh()).getLoaiOly() == 'loai4'}">
+		        	  4 ô
+		        </c:when>
+		           <c:when test="${mh.getLoaiTap() == 'loai5'}">
+		        	  5 ô
+		        </c:when>
+		        
+		        <c:otherwise>
+		         	 Kẻ ngang
+        </c:otherwise>
+          </c:choose>
+            
+           
         </p>
         <p>
             <strong>Số trang: </strong> ${facade.getStationery(sp.getCtSize().getMathang().getMamh()).getSoTrangTap()} Trang
@@ -159,8 +223,8 @@
 				</div>
 				<!-- Phần thông tin thanh toán (bên phải) -->
 				<div class="col-md-4">
-					<label class="head_"><strong>Thông tin người nhận
-							& thanh toán</strong></label>
+					<label class="head_"><strong>Thông tin nhận hàng
+							</strong></label>
 					<div class="fixed-payment">
 
 						<div class="form-group">

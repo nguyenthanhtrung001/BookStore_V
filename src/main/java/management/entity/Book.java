@@ -1,5 +1,6 @@
 package management.entity;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -8,7 +9,10 @@ import management.DTO.ProductDTO;
 @Entity
 @DiscriminatorValue("Book")
 public class Book extends Mathang {
+	@Column(columnDefinition = "NVARCHAR(255)")
     private String tacgia;
+	
+	@Column(columnDefinition = "nvarchar(100)")
     private String nhaXuatBan;
     private int namXuatBan;
     private int soTrang;
