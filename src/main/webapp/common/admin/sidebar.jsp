@@ -132,20 +132,11 @@
 				</a>
 					<ul class="nav nav-treeview" style="display: none;">
 						<li class="nav-item"><a
-							href='<c:url value="/admin/order"/>'
+							href='<c:url value="/admin/orders"/>'
 							class="nav-link"> <i class="far fa-circle nav-icon"></i>
-								<p>Chưa duyệt</p>
+								<p>Quản lý đơn hàng</p>
 						</a></li>
-						<li class="nav-item"><a
-							href='<c:url value="/admin/order/xl"/>'
-							class="nav-link"> <i class="far fa-circle nav-icon"></i>
-								<p>Đã duyệt</p>
-						</a></li>
-						<li class="nav-item"><a
-							href='<c:url value="/admin/order/h"/>'
-							class="nav-link"> <i class="far fa-circle nav-icon"></i>
-								<p>Đã hủy</p>
-						</a></li>
+						
 
 					</ul></li>
 
