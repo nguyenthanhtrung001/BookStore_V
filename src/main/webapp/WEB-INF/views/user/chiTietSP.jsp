@@ -295,7 +295,7 @@
             <!-- Các thẻ liên quan tới Stationery -->
         </ul>
            <ul class="d-flex justify-content-between align-items-center pad5">
-           <li class="list-inline-item "> <strong class="ml-2">Số Trang: </strong>${mh.getSoTrangTap()}</li>
+           <li class="list-inline-item "> <strong class="ml-2">Số Trang: </strong>${mh.getSoTrangTap()} Trang</li>
             <!-- Các thẻ liên quan tới Stationery -->
         </ul>
          <li class="list-group-item"><strong class="mr-2">Thương

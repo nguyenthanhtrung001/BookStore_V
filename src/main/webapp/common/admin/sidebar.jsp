@@ -154,14 +154,14 @@
 				<li class="nav-item" ><a href="#" class="nav-link"> <i
 						class="fas fa-truck"></i>
 						<p>
-							Quản Lý Nhà Cung Cấp<i class="right fas fa-angle-left"></i>
+							Quản Lý Giá Sản Phẩm<i class="right fas fa-angle-left"></i>
 						</p>
 				</a>
 					<ul class="nav nav-treeview" >
 						<li class="nav-item"><a
 							href='<c:url value="/admin/update/price"/>' class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Danh sách nhà cung cấp</p>
+								<p>Cập nhật giá</p>
 						</a></li>
 
 					</ul></li>

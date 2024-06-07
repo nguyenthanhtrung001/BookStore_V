@@ -109,26 +109,26 @@
 
 
 <!-- Header -->
-<header class="bg-dark text-white fixed-top ">
+<header class=" bg-dark text-white fixed-top  ">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
 			<a href="/user/index">
 				<div id="shop-name" class="display-4">
-					<i class="fas fa-dragon"></i> Urban Vogue
+					<i class="fas fa-dragon"></i> BookStore
 				</div>
 			</a>
 				<p>
 			
-					<span class="lead ml-4"><em>Thời trang - phong cách</em></span>
+					<span class="lead ml-4"><em>Kiến Thức - Trải Nghiệm</em></span>
 				</p>
 
 
 			</div>
-			<div class="col-md-5">
+			<div class="col-md-4">
 
 				<form class="form-inline mt-4" id="searchForm"
-					action="/product/search/" style="display: none">
+					action="/product/search/" >
 					<input class="form-control mr-2" style="width: 60%;" type="search"
 						placeholder="Tìm kiếm" name="search"> 
 					<button class="btn btn-outline-light" type="submit">Tìm
@@ -143,12 +143,12 @@
 				</div>
 
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				 
 				
 				<!-- Đoạn code mới để giao diện đăng nhập -->
 				
-				<div class="d-flex align-items-center">
+				<div class="d-flex align-items-center mt-4">
     <a id="loginButton" href="https://accounts.google.com/o/oauth2/auth?scope=email%20profile&hl=vi&redirect_uri=http://localhost:8080/login_google/LoginGoogleHandler&response_type=code&client_id=242828357380-bmi9embekgk0pqkcl14jqt35g80letup.apps.googleusercontent.com&approval_prompt=force" class="btn btn-outline-secondary">
     <i class="fas fa-user"></i> Đăng Nhập
 </a>
@@ -167,7 +167,9 @@
   <!-- ...Thêm mục khác nếu cần -->
 </div>
 
-
+    
+</div>
+    
 
     
 </div>
@@ -216,10 +218,7 @@
 					class="fas fa-shopping-cart"></i> Giỏ hàng </a>
 				<button>Profile</button>	 -->
 					
-					
-				<i id="searchIcon" class="fas fa-search ml-4 mt-2" style="font-size: 36px;"></i> <!-- Biểu tượng kính lúp -->
-
-
+				
 			</div>
 
 		</div>
@@ -279,7 +278,7 @@
 
         
      // Lấy thẻ biểu tượng và thanh tìm kiếm
-        var searchIcon = document.getElementById("searchIcon");
+   /*      var searchIcon = document.getElementById("searchIcon");
         var searchForm = document.getElementById("searchForm");
 
         // Thêm sự kiện click vào biểu tượng
@@ -290,7 +289,7 @@
           } else {
             searchForm.style.display = "none";
           }
-        });
+        }); */
 
 
 

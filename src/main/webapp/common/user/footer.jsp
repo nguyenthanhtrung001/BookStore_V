@@ -9,7 +9,7 @@
             <div class="col-md-4">
             
                 <h3>Giới Thiệu</h3>
-                <p>Cửa hàng thời trang chuyên cung cấp các sản phẩm thời trang hàng đầu.</p>
+                <p>Văn phòng phẩm cung cấp đầy đủ các thiết bị và sách mà bạn mong muốn.</p>
             </div>
             <div class="col-md-4 d-flex justify-content-center">
                 <div class="">
@@ -23,11 +23,11 @@
               <div class="align-self-center" >
                 <h3>Tác giả</h3><div class="small"> trung đẹp trai</div>
                 <p>Được thực hiện bởi Nhóm ABC vào tháng 10 năm 2023.</p>
-                <p>Kết nối với chúng tôi trên:</p>
-                <a href="https://www.facebook.com/your-facebook-page" target="_blank" class="social-icon"><i class="fab fa-facebook"> </i> Facebook.com</a>
-                <a href="https://twitter.com/your-twitter-page" target="_blank" class="social-icon"><i class="fab fa-twitter"></i> Twitter.com </a>
+                <a href="https://www.facebook.com/your-facebook-page" target="_blank" class="social-icon">Kết nối: <i class="fab fa-facebook"></i> Facebook.com</a>
+           </p>
+                  <!--   <a href="https://twitter.com/your-twitter-page" target="_blank" class="social-icon"><i class="fab fa-twitter"></i> Twitter.com </a>
                <a href="https://www.youtube.com/your-youtube-channel" target="_blank" class="social-icon"><i class="fab fa-youtube"></i> Youtube.com </a>
-            	<br>
+             -->	<br>
             	
             </div>
               </div>
