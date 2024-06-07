@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.valves.rewrite.InternalRewriteMap.UpperCase;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -267,10 +267,6 @@ public class ChiTietSPController {
 		ModelAndView mav = new ModelAndView("user/thanhToan");
 
 		
-		
-		
-		
-		
 		// Lớp để tách chuỗi Json
 		ObjectMapper objectMapper = new ObjectMapper();
 
@@ -292,11 +288,7 @@ public class ChiTietSPController {
 				Mathang mh = donHangDao.layMatHangTheoID(product.getIdProduct());
 				
 				facade.addProduct(mh);
-			
-				
-				
-				
-				
+
 				
 				ThanhToanDto tmp = new ThanhToanDto();
 

@@ -238,30 +238,14 @@
 								class="form-control" id="sdt" name="sdt"
 								placeholder="VD: 0123456789" required>
 						</div>
-
+						
 						<div class="form-group">
-							<label for="province">Tỉnh/Thành phố</label> <select
-								name="province" id="province" class="form-control">
-								<option value="">Chọn tỉnh/thành phố</option>
-								<!-- Các tùy chọn của tỉnh/thành phố ở đây -->
-							</select>
+							<label for="diaChi">Địa chỉ</label> <input type="tel"
+								class="form-control" id="diachi" name="diaChi"
+								placeholder="VD: JCM" required>
 						</div>
 
-						<div class="form-group">
-							<label for="district">Quận/Huyện</label> <select name="district"
-								id="district" class="form-control">
-								<option value="">Chọn quận/huyện</option>
-								<!-- Các tùy chọn của quận/huyện ở đây -->
-							</select>
-						</div>
-
-						<div class="form-group">
-							<label for="ward">Phường/Xã</label> <select name="ward" id="ward"
-								class="form-control">
-								<option value="">Chọn phường/xã</option>
-								<!-- Các tùy chọn của phường/xã ở đây -->
-							</select>
-						</div>
+						
 
 						<div class="form-group">
 							<label for="totalProducts">Tổng sản phẩm</label> <input
